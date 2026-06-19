@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://b688m5nosinbd"]
 
+[ext_resource type="Script" uid="uid://ck1e1kujk6h8f" path="res://Blockout/scripts/csg_corner_wall_piece.gd" id="1_suciw"]
+
 [node name="CSGCornerWallPiece" type="Node3D" unique_id=1039268938]
+script = ExtResource("1_suciw")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1013748323]
+[node name="CornerBlock" type="CSGBox3D" parent="." unique_id=1013748323]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1216140748]
+[node name="Wall_A" type="CSGBox3D" parent="." unique_id=1216140748]
+
+[node name="Wall_B" type="CSGBox3D" parent="." unique_id=1257462034]
