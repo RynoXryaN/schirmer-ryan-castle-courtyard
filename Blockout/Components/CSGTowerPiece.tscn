@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://5gy7k856h1bq"]
+
+[ext_resource type="Script" uid="uid://dywtveciongx1" path="res://Blockout/scripts/csg_tower_piece.gd" id="1_3e213"]
+
+[node name="CSGTowerPiece" type="Node3D" unique_id=934199931]
+script = ExtResource("1_3e213")
+tower_height = 12.0
+
+[node name="Tower" type="CSGCylinder3D" parent="." unique_id=816335257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+radius = 4.0
+height = 12.0
+sides = 16

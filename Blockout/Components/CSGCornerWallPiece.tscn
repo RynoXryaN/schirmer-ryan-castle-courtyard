@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b688m5nosinbd"]
+
+[node name="CSGCornerWallPiece" type="Node3D" unique_id=1039268938]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1013748323]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1216140748]

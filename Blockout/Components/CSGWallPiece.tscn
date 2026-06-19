@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cota36w3adsdh"]
+
+[ext_resource type="Script" uid="uid://tuntw8xcb3yr" path="res://Blockout/scripts/csg_wall_piece.gd" id="1_c6tjs"]
+
+[node name="CSGWallPiece" type="Node3D" unique_id=520957344]
+script = ExtResource("1_c6tjs")
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=277903121]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://jnl5dfgjme8j"]
+
+[ext_resource type="Script" uid="uid://w2j8hyupug64" path="res://Blockout/scripts/csg_stair_section.gd" id="1_6rcbr"]
+
+[node name="CSGStairSection" type="Node3D" unique_id=1204061612]
+script = ExtResource("1_6rcbr")
+height_sections = 1
+
+[node name="Steps" type="Node3D" parent="." unique_id=917852300]
+
+[node name="Step_00" type="CSGBox3D" parent="Steps" unique_id=250401289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+size = Vector3(3, 0.5, 0.75)
+
+[node name="Step_01" type="CSGBox3D" parent="Steps" unique_id=1571703814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.75)
+size = Vector3(3, 1, 0.75)
+
+[node name="Step_02" type="CSGBox3D" parent="Steps" unique_id=1291684217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 1.5)
+size = Vector3(3, 1.5, 0.75)
+
+[node name="Step_03" type="CSGBox3D" parent="Steps" unique_id=1734634376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.25)
+size = Vector3(3, 2, 0.75)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c1xr78h1gtn48"]
+
+[node name="Courtyard" type="Node3D" unique_id=915611972]
+
+[node name="Blockout" type="CSGCombiner3D" parent="." unique_id=1857254789]

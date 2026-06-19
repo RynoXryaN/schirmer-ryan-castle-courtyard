@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://chpdusbt3x0pp"]
+
+[ext_resource type="Script" uid="uid://c7uuu43p5gmnx" path="res://Blockout/scripts/csg_drawbridge_piece.gd" id="1_bbpj6"]
+
+[node name="CSGDrawbridgePiece" type="Node3D" unique_id=665789054]
+script = ExtResource("1_bbpj6")
+
+[node name="Drawbridge" type="CSGBox3D" parent="." unique_id=1729743798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+size = Vector3(6, 0.4, 12)
