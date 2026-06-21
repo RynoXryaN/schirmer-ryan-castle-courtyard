@@ -4,47 +4,31 @@
 
 [node name="CSGCastleWallSection" type="Node3D" unique_id=78147870]
 script = ExtResource("1_sl74h")
+wall_length_units = 2
+merlon_count = 3
 
 [node name="Wall" type="CSGBox3D" parent="." unique_id=788758835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-size = Vector3(24, 8, 1.5)
+size = Vector3(8, 8, 1)
 
 [node name="WallWalk" type="CSGBox3D" parent="." unique_id=553014663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.875, -2)
-size = Vector3(24, 0.25, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, -2)
+size = Vector3(8, 0.4, 3)
 
-[node name="Battlements" type="Node3D" parent="." unique_id=83706517]
+[node name="Parapet" type="CSGBox3D" parent="." unique_id=1842608779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0)
+size = Vector3(8, 1, 1)
 
 [node name="Merlons" type="Node3D" parent="." unique_id=987170882]
 
-[node name="Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=956903820]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
+[node name="Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=165696653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6666667, 9.7, 0)
+size = Vector3(1.4, 1.4, 1)
 
-[node name="Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=1463167949]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
+[node name="Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=1360092059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.440892e-16, 9.7, 0)
+size = Vector3(1.4, 1.4, 1)
 
-[node name="Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=415316177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
-
-[node name="Merlon_03" type="CSGBox3D" parent="Merlons" unique_id=1357695653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
-
-[node name="Merlon_04" type="CSGBox3D" parent="Merlons" unique_id=1416550107]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
-
-[node name="Merlon_05" type="CSGBox3D" parent="Merlons" unique_id=1452486367]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
-
-[node name="Merlon_06" type="CSGBox3D" parent="Merlons" unique_id=1380212350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
-
-[node name="Merlon_07" type="CSGBox3D" parent="Merlons" unique_id=1463003639]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 8.75, 0)
-size = Vector3(1.5, 1.5, 1.5)
+[node name="Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=2010548645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6666667, 9.7, 0)
+size = Vector3(1.4, 1.4, 1)

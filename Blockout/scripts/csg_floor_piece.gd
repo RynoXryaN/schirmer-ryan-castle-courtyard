@@ -2,23 +2,24 @@
 class_name CSGFloorPiece
 extends CSGPieceBase
 
-#region /// Exported Variables
 
-@export var floor_width: float = 40.0:
+#region /// Exported Variables: Floor
+
+@export var floor_width_units: int = 15:
 	set(value):
-		floor_width = safe_float(value)
+		floor_width_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var floor_depth: float = 50.0:
+@export var floor_depth_units: int = 20:
 	set(value):
-		floor_depth = safe_float(value)
+		floor_depth_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var floor_thickness: float = 0.5:
+@export var floor_thickness_units: float = 0.125:
 	set(value):
-		floor_thickness = safe_float(value)
+		floor_thickness_units = safe_float(value, 0.025)
 		if auto_update:
 			update_piece()
 
@@ -27,16 +28,20 @@ extends CSGPieceBase
 		top_surface_at_zero = value
 		if auto_update:
 			update_piece()
-			
+
 #endregion
 
-@onready var floor: CSGBox3D = $Floor
 
-#region Virtual Functions
+#region /// Update Logic
 
 func update_piece() -> void:
+	var floor := get_node_or_null("Floor") as CSGBox3D
 	if floor == null:
 		return
+
+	var floor_width := unit(floor_width_units)
+	var floor_depth := unit(floor_depth_units)
+	var floor_thickness := unit(floor_thickness_units)
 
 	floor.size = Vector3(floor_width, floor_thickness, floor_depth)
 
@@ -44,5 +49,5 @@ func update_piece() -> void:
 		floor.position.y = -floor_thickness / 2.0
 	else:
 		floor.position.y = floor_thickness / 2.0
-		
+
 #endregion

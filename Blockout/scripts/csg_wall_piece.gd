@@ -3,23 +3,23 @@ class_name CSGWallPiece
 extends CSGPieceBase
 
 
-#region /// Exported Variables
+#region /// Exported Variables: Wall
 
-@export var wall_length: float = 20.0:
+@export var wall_length_units: int = 1:
 	set(value):
-		wall_length = safe_float(value)
+		wall_length_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var wall_height: float = 8.0:
+@export var wall_height_units: int = 1:
 	set(value):
-		wall_height = safe_float(value)
+		wall_height_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var wall_thickness: float = 1.0:
+@export var wall_thickness_units: float = 0.25:
 	set(value):
-		wall_thickness = safe_float(value)
+		wall_thickness_units = safe_float(value, 0.05)
 		if auto_update:
 			update_piece()
 
@@ -38,6 +38,10 @@ func update_piece() -> void:
 	var wall := get_node_or_null("Wall") as CSGBox3D
 	if wall == null:
 		return
+
+	var wall_length := unit(wall_length_units)
+	var wall_height := unit(wall_height_units)
+	var wall_thickness := unit(wall_thickness_units)
 
 	wall.size = Vector3(wall_length, wall_height, wall_thickness)
 

@@ -3,35 +3,35 @@ class_name CSGStairSection
 extends CSGPieceBase
 
 
-#region /// Exported Variables
+#region /// Exported Variables: Stairs
 
-@export var height_sections: int = 4:
+@export var height_sections: int = 2:
 	set(value):
-		height_sections = max(value, 1)
+		height_sections = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var rise_per_section: float = 2.0:
+@export var rise_units_per_section: float = 0.5:
 	set(value):
-		rise_per_section = safe_float(value)
+		rise_units_per_section = safe_float(value, 0.25)
 		if auto_update:
 			update_piece()
 
-@export var run_per_section: float = 3.0:
+@export var run_units_per_section: float = 0.75:
 	set(value):
-		run_per_section = safe_float(value)
+		run_units_per_section = safe_float(value, 0.25)
 		if auto_update:
 			update_piece()
 
 @export var steps_per_section: int = 4:
 	set(value):
-		steps_per_section = max(value, 1)
+		steps_per_section = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var stair_width: float = 3.0:
+@export var stair_width_units: float = 1.0:
 	set(value):
-		stair_width = safe_float(value)
+		stair_width_units = safe_float(value, 0.25)
 		if auto_update:
 			update_piece()
 
@@ -49,8 +49,9 @@ func update_piece() -> void:
 		child.free()
 
 	var total_steps := height_sections * steps_per_section
-	var step_height := rise_per_section / float(steps_per_section)
-	var step_depth := run_per_section / float(steps_per_section)
+	var step_height := unit(rise_units_per_section) / float(steps_per_section)
+	var step_depth := unit(run_units_per_section) / float(steps_per_section)
+	var stair_width := unit(stair_width_units)
 
 	for i in total_steps:
 		var step := CSGBox3D.new()
@@ -63,7 +64,7 @@ func update_piece() -> void:
 		step.position = Vector3(
 			0.0,
 			current_height / 2.0,
-			float(i) * step_depth + step_depth / 2
+			float(i) * step_depth + step_depth / 2.0
 		)
 
 		steps.add_child(step)

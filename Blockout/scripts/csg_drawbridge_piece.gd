@@ -3,23 +3,23 @@ class_name CSGDrawbridgePiece
 extends CSGPieceBase
 
 
-#region /// Exported Variables
+#region /// Exported Variables: Drawbridge
 
-@export var bridge_width: float = 6.0:
+@export var bridge_width_units: int = 2:
 	set(value):
-		bridge_width = safe_float(value)
+		bridge_width_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var bridge_length: float = 12.0:
+@export var bridge_length_units: int = 3:
 	set(value):
-		bridge_length = safe_float(value)
+		bridge_length_units = safe_int(value)
 		if auto_update:
 			update_piece()
 
-@export var bridge_thickness: float = 0.4:
+@export var bridge_thickness_units: float = 0.1:
 	set(value):
-		bridge_thickness = safe_float(value)
+		bridge_thickness_units = safe_float(value, 0.025)
 		if auto_update:
 			update_piece()
 
@@ -38,6 +38,10 @@ func update_piece() -> void:
 	var bridge := get_node_or_null("Drawbridge") as CSGBox3D
 	if bridge == null:
 		return
+
+	var bridge_width := unit(bridge_width_units)
+	var bridge_length := unit(bridge_length_units)
+	var bridge_thickness := unit(bridge_thickness_units)
 
 	bridge.size = Vector3(bridge_width, bridge_thickness, bridge_length)
 
