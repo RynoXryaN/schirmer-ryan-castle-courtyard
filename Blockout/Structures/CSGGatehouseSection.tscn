@@ -7,9 +7,10 @@ script = ExtResource("1_t3veh")
 
 [node name="Body" type="CSGBox3D" parent="." unique_id=94129714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+use_collision = true
 size = Vector3(12, 8, 8)
 
-[node name="Gate_Arch_Cutout" type="CSGPolygon3D" parent="Body" unique_id=267406652]
+[node name="@CSGPolygon3D@66870" type="CSGPolygon3D" parent="Body" unique_id=1935445336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 5)
 operation = 2
 polygon = PackedVector2Array(-3, -3, 3, -3, 3, 0, 3, 0, 2.9423559, 0.58527094, 2.7716386, 1.1480503, 2.4944088, 1.6667107, 2.1213202, 2.1213202, 1.6667107, 2.4944088, 1.1480503, 2.7716386, 0.58527094, 2.9423559, 1.8369095e-16, 3, -0.58527094, 2.9423559, -1.1480503, 2.7716386, -1.6667107, 2.4944088, -2.1213202, 2.1213202, -2.4944088, 1.6667107, -2.7716386, 1.1480503, -2.9423559, 0.58527094, -3, 3.673819e-16, -3, 0)
@@ -24,78 +25,96 @@ size = Vector3(12, 0.4, 8)
 
 [node name="Parapet" type="Node3D" parent="." unique_id=754344691]
 
-[node name="@CSGBox3D@18783" type="CSGBox3D" parent="Parapet" unique_id=323824009]
+[node name="FrontParapet" type="CSGBox3D" parent="Parapet" unique_id=696106133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, -3.5)
+use_collision = true
 size = Vector3(12, 1, 1)
 
-[node name="@CSGBox3D@18784" type="CSGBox3D" parent="Parapet" unique_id=1269023264]
+[node name="RearParapet" type="CSGBox3D" parent="Parapet" unique_id=1513749006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 3.5)
+use_collision = true
 size = Vector3(12, 1, 1)
 
-[node name="@CSGBox3D@18785" type="CSGBox3D" parent="Parapet" unique_id=2129658818]
+[node name="LeftParapet" type="CSGBox3D" parent="Parapet" unique_id=604358661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 8.5, 0)
+use_collision = true
 size = Vector3(1, 1, 8)
 
-[node name="@CSGBox3D@18786" type="CSGBox3D" parent="Parapet" unique_id=173036202]
+[node name="RightParapet" type="CSGBox3D" parent="Parapet" unique_id=97111774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 8.5, 0)
+use_collision = true
 size = Vector3(1, 1, 8)
 
 [node name="Merlons" type="Node3D" parent="." unique_id=404012936]
 
-[node name="@CSGBox3D@18787" type="CSGBox3D" parent="Merlons" unique_id=301216325]
+[node name="Front_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1008560194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 9.7, -3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18788" type="CSGBox3D" parent="Merlons" unique_id=149286734]
+[node name="Front_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=197052305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 9.7, -3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18789" type="CSGBox3D" parent="Merlons" unique_id=2128614154]
+[node name="Front_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=1260181175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 9.7, -3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18790" type="CSGBox3D" parent="Merlons" unique_id=1244173636]
+[node name="Front_Merlon_03" type="CSGBox3D" parent="Merlons" unique_id=66715585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 9.7, -3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18791" type="CSGBox3D" parent="Merlons" unique_id=471982699]
+[node name="Rear_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1988689643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 9.7, 3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18792" type="CSGBox3D" parent="Merlons" unique_id=982834378]
+[node name="Rear_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=195032238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 9.7, 3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18793" type="CSGBox3D" parent="Merlons" unique_id=394708827]
+[node name="Rear_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=215440894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 9.7, 3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18794" type="CSGBox3D" parent="Merlons" unique_id=1273422188]
+[node name="Rear_Merlon_03" type="CSGBox3D" parent="Merlons" unique_id=1600619815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 9.7, 3.5)
+use_collision = true
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@18795" type="CSGBox3D" parent="Merlons" unique_id=607301957]
+[node name="Left_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1613745635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 9.7, -2.6666667)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@18796" type="CSGBox3D" parent="Merlons" unique_id=862241805]
+[node name="Left_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=1485771175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 9.7, -4.440892e-16)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@18797" type="CSGBox3D" parent="Merlons" unique_id=1043302611]
+[node name="Left_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=688605138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 9.7, 2.6666667)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@18798" type="CSGBox3D" parent="Merlons" unique_id=1738584221]
+[node name="Right_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=2071600795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 9.7, -2.6666667)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@18799" type="CSGBox3D" parent="Merlons" unique_id=862964322]
+[node name="Right_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=25173308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 9.7, -4.440892e-16)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@18800" type="CSGBox3D" parent="Merlons" unique_id=590131353]
+[node name="Right_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=244761114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 9.7, 2.6666667)
+use_collision = true
 size = Vector3(1, 1.4, 1.2)
 
 [node name="Interior" type="Node3D" parent="." unique_id=993048809]

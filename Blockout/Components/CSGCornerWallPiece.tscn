@@ -6,7 +6,16 @@
 script = ExtResource("1_suciw")
 
 [node name="CornerBlock" type="CSGBox3D" parent="." unique_id=1013748323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+use_collision = true
+size = Vector3(4, 8, 4)
 
 [node name="Wall_A" type="CSGBox3D" parent="." unique_id=1216140748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
+use_collision = true
+size = Vector3(6, 8, 1.5)
 
 [node name="Wall_B" type="CSGBox3D" parent="." unique_id=1257462034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 5)
+use_collision = true
+size = Vector3(1.5, 8, 6)

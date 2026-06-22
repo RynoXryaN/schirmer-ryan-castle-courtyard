@@ -42,6 +42,24 @@ enum SideFeature { NONE, WINDOW, DOOR }
 
 #endregion
 
+#region /// Exported Variables: Lighting
+
+@export var generate_debug_lights: bool = true:
+	set(value):
+		generate_debug_lights = value
+		update_piece()
+
+@export var debug_light_energy: float = 0.8:
+	set(value):
+		debug_light_energy = value
+		update_piece()
+
+@export var debug_light_range: float = 8.0:
+	set(value):
+		debug_light_range = value
+		update_piece()
+
+#endregion
 
 #region /// Exported Variables: Roof
 
@@ -221,6 +239,7 @@ enum SideFeature { NONE, WINDOW, DOOR }
 
 func update_piece() -> void:
 	_update_walls()
+	_update_debug_lights()
 	_update_roof()
 	_update_openings()
 	_update_parapet()
@@ -370,7 +389,7 @@ func _add_opening(side_name: String, feature: SideFeature, y: float) -> void:
 			cutout.rotation_degrees.y = 90.0
 
 	target_wall.add_child(cutout)
-	cutout.owner = get_tree().edited_scene_root
+	_set_owner_safe(cutout)
 	pass
 
 
@@ -426,7 +445,7 @@ func _add_parapet_wall(parent: Node3D, wall_name: String, wall_size: Vector3, wa
 	wall.size = wall_size
 	wall.position = wall_position
 	parent.add_child(wall)
-	wall.owner = get_tree().edited_scene_root
+	_set_owner_safe(wall)
 	pass
 
 
@@ -488,8 +507,38 @@ func _add_merlon_row(merlons: Node3D, side_name: String, tower_width: float, tow
 				merlon.position = Vector3(-tower_width / 2.0 + merlon_thickness / 2.0, y, start + spacing * i)
 
 		merlons.add_child(merlon)
-		merlon.owner = get_tree().edited_scene_root
+		_set_owner_safe(merlon)
 
 	pass
+
+
+func _update_debug_lights() -> void:
+	var lights := get_node_or_null("InteriorLights") as Node3D
+
+	if lights == null:
+		lights = Node3D.new()
+		lights.name = "InteriorLights"
+		add_child(lights)
+		_set_owner_safe(lights)
+
+	for child in lights.get_children():
+		child.free()
+
+	if not generate_debug_lights:
+		return
+
+	var floor_height := unit(floor_height_units)
+
+	for i in floor_count:
+		var light := OmniLight3D.new()
+		light.name = "InteriorLight_%02d" % i
+		light.position = Vector3(0.0, floor_height * float(i) + floor_height * 0.5, 0.0)
+		light.light_energy = debug_light_energy
+		light.omni_range = debug_light_range
+		light.shadow_enabled = false
+
+		lights.add_child(light)
+		_set_owner_safe(light)
+		pass
 
 #endregion

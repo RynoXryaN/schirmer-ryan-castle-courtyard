@@ -13,6 +13,13 @@ extends Node3D
 
 #endregion
 
+#region /// Exported Variables: Collision
+
+@export var use_generated_collision: bool = true
+@export_flags_3d_physics var generated_collision_layer: int = 1
+@export_flags_3d_physics var generated_collision_mask: int = 1
+
+#endregion
 
 #region /// Exported Variables: Debug
 
@@ -55,5 +62,28 @@ func safe_int(value: int, minimum: int = 1) -> int:
 
 func refresh() -> void:
 	update_piece()
+	
+func _set_owner_safe(node: Node) -> void:
+	if node == null:
+		return
+
+	if Engine.is_editor_hint() and get_tree() != null:
+		var scene_root := get_tree().edited_scene_root
+		if scene_root != null:
+			node.owner = scene_root
+			return
+
+	node.owner = owner
+	pass
+	
+
+func _setup_csg_collision(csg: CSGShape3D) -> void:
+	if csg == null:
+		return
+
+	csg.use_collision = use_generated_collision
+	csg.collision_layer = generated_collision_layer
+	csg.collision_mask = generated_collision_mask
+
 
 #endregion

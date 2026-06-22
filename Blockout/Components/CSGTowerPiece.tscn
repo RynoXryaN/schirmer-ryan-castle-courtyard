@@ -13,31 +13,33 @@ arch_sides = 16
 
 [node name="NorthWall" type="CSGBox3D" parent="Walls" unique_id=678927442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -3.5)
+use_collision = true
 size = Vector3(8, 8, 1)
 
-[node name="North_DOOR_Cutout" type="CSGPolygon3D" parent="Walls/NorthWall" unique_id=1010377784]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -0.7)
+[node name="@CSGPolygon3D@19557" type="CSGPolygon3D" parent="Walls/NorthWall" unique_id=258836173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.7)
 operation = 2
 polygon = PackedVector2Array(-1.1, -1.8, 1.1, -1.8, 1.1, 0.7, 1.1, 0.7, 1.0788639, 0.91459936, 1.0162675, 1.1209518, 0.9146166, 1.3111273, 0.7778175, 1.4778174, 0.61112726, 1.6146166, 0.42095178, 1.7162675, 0.21459936, 1.7788638, 6.735335e-17, 1.8, -0.21459936, 1.7788638, -0.42095178, 1.7162675, -0.61112726, 1.6146166, -0.7778175, 1.4778174, -0.9146166, 1.3111273, -1.0162675, 1.1209518, -1.0788639, 0.91459936, -1.1, 0.7, -1.1, 0.7)
 depth = 1.4
 
-[node name="North_WINDOW_Cutout" type="CSGPolygon3D" parent="Walls/NorthWall" unique_id=1497607191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.7)
+[node name="@CSGPolygon3D@19561" type="CSGPolygon3D" parent="Walls/NorthWall" unique_id=557296261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.7)
 operation = 2
 polygon = PackedVector2Array(-0.8, -1.1, 0.8, -1.1, 0.8, 0.3, 0.8, 0.3, 0.7846282, 0.45607227, 0.7391036, 0.60614675, 0.6651757, 0.7444562, 0.56568545, 0.8656854, 0.4444562, 0.9651757, 0.30614674, 1.0391036, 0.15607226, 1.0846282, 4.8984253e-17, 1.1, -0.15607226, 1.0846282, -0.30614674, 1.0391036, -0.4444562, 0.9651757, -0.56568545, 0.8656854, -0.6651757, 0.7444562, -0.7391036, 0.60614675, -0.7846282, 0.45607227, -0.8, 0.3, -0.8, 0.3)
 depth = 1.4
 
 [node name="SouthWall" type="CSGBox3D" parent="Walls" unique_id=294865479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 3.5)
+use_collision = true
 size = Vector3(8, 8, 1)
 
-[node name="South_DOOR_Cutout" type="CSGPolygon3D" parent="Walls/SouthWall" unique_id=214229788]
+[node name="@CSGPolygon3D@19559" type="CSGPolygon3D" parent="Walls/SouthWall" unique_id=929369956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.7)
 operation = 2
 polygon = PackedVector2Array(-1.1, -1.8, 1.1, -1.8, 1.1, 0.7, 1.1, 0.7, 1.0788639, 0.91459936, 1.0162675, 1.1209518, 0.9146166, 1.3111273, 0.7778175, 1.4778174, 0.61112726, 1.6146166, 0.42095178, 1.7162675, 0.21459936, 1.7788638, 6.735335e-17, 1.8, -0.21459936, 1.7788638, -0.42095178, 1.7162675, -0.61112726, 1.6146166, -0.7778175, 1.4778174, -0.9146166, 1.3111273, -1.0162675, 1.1209518, -1.0788639, 0.91459936, -1.1, 0.7, -1.1, 0.7)
 depth = 1.4
 
-[node name="South_WINDOW_Cutout" type="CSGPolygon3D" parent="Walls/SouthWall" unique_id=538005859]
+[node name="@CSGPolygon3D@19563" type="CSGPolygon3D" parent="Walls/SouthWall" unique_id=231227913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.7)
 operation = 2
 polygon = PackedVector2Array(-0.8, -1.1, 0.8, -1.1, 0.8, 0.3, 0.8, 0.3, 0.7846282, 0.45607227, 0.7391036, 0.60614675, 0.6651757, 0.7444562, 0.56568545, 0.8656854, 0.4444562, 0.9651757, 0.30614674, 1.0391036, 0.15607226, 1.0846282, 4.8984253e-17, 1.1, -0.15607226, 1.0846282, -0.30614674, 1.0391036, -0.4444562, 0.9651757, -0.56568545, 0.8656854, -0.6651757, 0.7444562, -0.7391036, 0.60614675, -0.7846282, 0.45607227, -0.8, 0.3, -0.8, 0.3)
@@ -45,15 +47,16 @@ depth = 1.4
 
 [node name="EastWall" type="CSGBox3D" parent="Walls" unique_id=71428448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4, 0)
+use_collision = true
 size = Vector3(1, 8, 8)
 
-[node name="East_DOOR_Cutout" type="CSGPolygon3D" parent="Walls/EastWall" unique_id=1411565506]
+[node name="@CSGPolygon3D@19558" type="CSGPolygon3D" parent="Walls/EastWall" unique_id=1477159054]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7, -2, 0)
 operation = 2
 polygon = PackedVector2Array(-1.1, -1.8, 1.1, -1.8, 1.1, 0.7, 1.1, 0.7, 1.0788639, 0.91459936, 1.0162675, 1.1209518, 0.9146166, 1.3111273, 0.7778175, 1.4778174, 0.61112726, 1.6146166, 0.42095178, 1.7162675, 0.21459936, 1.7788638, 6.735335e-17, 1.8, -0.21459936, 1.7788638, -0.42095178, 1.7162675, -0.61112726, 1.6146166, -0.7778175, 1.4778174, -0.9146166, 1.3111273, -1.0162675, 1.1209518, -1.0788639, 0.91459936, -1.1, 0.7, -1.1, 0.7)
 depth = 1.4
 
-[node name="East_WINDOW_Cutout" type="CSGPolygon3D" parent="Walls/EastWall" unique_id=2130325450]
+[node name="@CSGPolygon3D@19562" type="CSGPolygon3D" parent="Walls/EastWall" unique_id=1647684]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7, 2, 0)
 operation = 2
 polygon = PackedVector2Array(-0.8, -1.1, 0.8, -1.1, 0.8, 0.3, 0.8, 0.3, 0.7846282, 0.45607227, 0.7391036, 0.60614675, 0.6651757, 0.7444562, 0.56568545, 0.8656854, 0.4444562, 0.9651757, 0.30614674, 1.0391036, 0.15607226, 1.0846282, 4.8984253e-17, 1.1, -0.15607226, 1.0846282, -0.30614674, 1.0391036, -0.4444562, 0.9651757, -0.56568545, 0.8656854, -0.6651757, 0.7444562, -0.7391036, 0.60614675, -0.7846282, 0.45607227, -0.8, 0.3, -0.8, 0.3)
@@ -61,16 +64,17 @@ depth = 1.4
 
 [node name="WestWall" type="CSGBox3D" parent="Walls" unique_id=181572686]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4, 0)
+use_collision = true
 size = Vector3(1, 8, 8)
 
-[node name="West_DOOR_Cutout" type="CSGPolygon3D" parent="Walls/WestWall" unique_id=1017635090]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7, -2, 0)
+[node name="@CSGPolygon3D@19560" type="CSGPolygon3D" parent="Walls/WestWall" unique_id=102415870]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7, -2, 0)
 operation = 2
 polygon = PackedVector2Array(-1.1, -1.8, 1.1, -1.8, 1.1, 0.7, 1.1, 0.7, 1.0788639, 0.91459936, 1.0162675, 1.1209518, 0.9146166, 1.3111273, 0.7778175, 1.4778174, 0.61112726, 1.6146166, 0.42095178, 1.7162675, 0.21459936, 1.7788638, 6.735335e-17, 1.8, -0.21459936, 1.7788638, -0.42095178, 1.7162675, -0.61112726, 1.6146166, -0.7778175, 1.4778174, -0.9146166, 1.3111273, -1.0162675, 1.1209518, -1.0788639, 0.91459936, -1.1, 0.7, -1.1, 0.7)
 depth = 1.4
 
-[node name="West_WINDOW_Cutout" type="CSGPolygon3D" parent="Walls/WestWall" unique_id=1600672960]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7, 2, 0)
+[node name="@CSGPolygon3D@19564" type="CSGPolygon3D" parent="Walls/WestWall" unique_id=2117048977]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7, 2, 0)
 operation = 2
 polygon = PackedVector2Array(-0.8, -1.1, 0.8, -1.1, 0.8, 0.3, 0.8, 0.3, 0.7846282, 0.45607227, 0.7391036, 0.60614675, 0.6651757, 0.7444562, 0.56568545, 0.8656854, 0.4444562, 0.9651757, 0.30614674, 1.0391036, 0.15607226, 1.0846282, 4.8984253e-17, 1.1, -0.15607226, 1.0846282, -0.30614674, 1.0391036, -0.4444562, 0.9651757, -0.56568545, 0.8656854, -0.6651757, 0.7444562, -0.7391036, 0.60614675, -0.7846282, 0.45607227, -0.8, 0.3, -0.8, 0.3)
 depth = 1.4
@@ -84,68 +88,68 @@ size = Vector3(6, 0.4, 6)
 
 [node name="Parapet" type="Node3D" parent="." unique_id=1284432953]
 
-[node name="@CSGBox3D@21403" type="CSGBox3D" parent="Parapet" unique_id=286340926]
+[node name="NorthParapet" type="CSGBox3D" parent="Parapet" unique_id=156126268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, -3.5)
 size = Vector3(8, 1, 1)
 
-[node name="@CSGBox3D@21404" type="CSGBox3D" parent="Parapet" unique_id=1830031929]
+[node name="SouthParapet" type="CSGBox3D" parent="Parapet" unique_id=1237540101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 3.5)
 size = Vector3(8, 1, 1)
 
-[node name="@CSGBox3D@21405" type="CSGBox3D" parent="Parapet" unique_id=1785562973]
+[node name="EastParapet" type="CSGBox3D" parent="Parapet" unique_id=1850329540]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 8.5, 0)
 size = Vector3(1, 1, 8)
 
-[node name="@CSGBox3D@21406" type="CSGBox3D" parent="Parapet" unique_id=1105991158]
+[node name="WestParapet" type="CSGBox3D" parent="Parapet" unique_id=387983528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 8.5, 0)
 size = Vector3(1, 1, 8)
 
 [node name="Merlons" type="Node3D" parent="." unique_id=732462220]
 
-[node name="@CSGBox3D@21407" type="CSGBox3D" parent="Merlons" unique_id=622469208]
+[node name="North_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1549748607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6666667, 9.7, -3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21408" type="CSGBox3D" parent="Merlons" unique_id=1327743790]
+[node name="North_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=134480471]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.440892e-16, 9.7, -3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21409" type="CSGBox3D" parent="Merlons" unique_id=1768245935]
+[node name="North_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=1700777781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6666667, 9.7, -3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21410" type="CSGBox3D" parent="Merlons" unique_id=2084562104]
+[node name="South_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1644973985]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6666667, 9.7, 3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21411" type="CSGBox3D" parent="Merlons" unique_id=1324595554]
+[node name="South_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=840561305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.440892e-16, 9.7, 3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21412" type="CSGBox3D" parent="Merlons" unique_id=2091294832]
+[node name="South_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=440790361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6666667, 9.7, 3.5)
 size = Vector3(1.2, 1.4, 1)
 
-[node name="@CSGBox3D@21413" type="CSGBox3D" parent="Merlons" unique_id=735729597]
+[node name="East_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=921333660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 9.7, -2.6666667)
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@21414" type="CSGBox3D" parent="Merlons" unique_id=1257753794]
+[node name="East_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=837194489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 9.7, -4.440892e-16)
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@21415" type="CSGBox3D" parent="Merlons" unique_id=952294995]
+[node name="East_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=783049112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 9.7, 2.6666667)
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@21416" type="CSGBox3D" parent="Merlons" unique_id=214783459]
+[node name="West_Merlon_00" type="CSGBox3D" parent="Merlons" unique_id=1700741872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 9.7, -2.6666667)
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@21417" type="CSGBox3D" parent="Merlons" unique_id=1290595453]
+[node name="West_Merlon_01" type="CSGBox3D" parent="Merlons" unique_id=1449919065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 9.7, -4.440892e-16)
 size = Vector3(1, 1.4, 1.2)
 
-[node name="@CSGBox3D@21418" type="CSGBox3D" parent="Merlons" unique_id=1559100029]
+[node name="West_Merlon_02" type="CSGBox3D" parent="Merlons" unique_id=2068126412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 9.7, 2.6666667)
 size = Vector3(1, 1.4, 1.2)

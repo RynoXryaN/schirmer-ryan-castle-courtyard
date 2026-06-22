@@ -1,5 +1,159 @@
 [gd_scene format=3 uid="uid://c1xr78h1gtn48"]
 
+[ext_resource type="PackedScene" uid="uid://bav8vogluj5o5" path="res://Blockout/Structures/CSGGatehouseSection.tscn" id="1_8duyk"]
+[ext_resource type="PackedScene" uid="uid://fbne8a22re1n" path="res://Blockout/Structures/CSGCastleWallSection.tscn" id="2_dres5"]
+[ext_resource type="PackedScene" uid="uid://cyuxq0nm8ltn6" path="res://Blockout/Components/CSGFloorPiece.tscn" id="3_yyisn"]
+[ext_resource type="PackedScene" uid="uid://5gy7k856h1bq" path="res://Blockout/Components/CSGTowerPiece.tscn" id="4_8jhyc"]
+[ext_resource type="PackedScene" uid="uid://ce64sa2aigmy1" path="res://Blockout/Structures/CSGTowerInteriorPiece.tscn" id="5_u1fkp"]
+[ext_resource type="PackedScene" uid="uid://cota36w3adsdh" path="res://Blockout/Components/CSGWallPiece.tscn" id="6_2c8vx"]
+[ext_resource type="PackedScene" uid="uid://chpdusbt3x0pp" path="res://Blockout/Components/CSGDrawbridgePiece.tscn" id="7_bqnmf"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Player/Player.tscn" id="8_dres5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dres5"]
+size = Vector3(66, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyisn"]
+size = Vector3(66, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jhyc"]
+size = Vector3(1, 8, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1fkp"]
+size = Vector3(1, 8, 80)
+
+[sub_resource type="Environment" id="Environment_dres5"]
+background_color = Color(0.18549618, 0.41620854, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.81912196, 0.8863491, 1, 1)
+
 [node name="Courtyard" type="Node3D" unique_id=915611972]
 
 [node name="Blockout" type="CSGCombiner3D" parent="." unique_id=1857254789]
+use_collision = true
+
+[node name="CSGFloorPiece" parent="Blockout" unique_id=577930890 instance=ExtResource("3_yyisn")]
+
+[node name="InvisiblePerimeterCollision2" type="Node3D" parent="Blockout/CSGFloorPiece" unique_id=1630672485]
+
+[node name="NorthBarrier" type="StaticBody3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2" unique_id=109720466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -40.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2/NorthBarrier" unique_id=484185977]
+shape = SubResource("BoxShape3D_dres5")
+
+[node name="SouthBarrier" type="StaticBody3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2" unique_id=379970235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 40.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2/SouthBarrier" unique_id=358173172]
+shape = SubResource("BoxShape3D_yyisn")
+
+[node name="EastBarrier" type="StaticBody3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2" unique_id=1511677168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2/EastBarrier" unique_id=1852992162]
+shape = SubResource("BoxShape3D_8jhyc")
+
+[node name="WestBarrier" type="StaticBody3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2" unique_id=1708729007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blockout/CSGFloorPiece/InvisiblePerimeterCollision2/WestBarrier" unique_id=1278311423]
+shape = SubResource("BoxShape3D_u1fkp")
+
+[node name="CSGGatehouseSection" parent="Blockout" unique_id=1650579229 instance=ExtResource("1_8duyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="CSGCastleWallSection" parent="Blockout" unique_id=78147870 instance=ExtResource("2_dres5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 26)
+merlon_count = 5
+
+[node name="CSGCastleWallSection2" parent="Blockout" unique_id=259393562 instance=ExtResource("2_dres5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 0, 26)
+merlon_count = 5
+
+[node name="CSGCastleWallSection3" parent="Blockout" unique_id=1259099728 instance=ExtResource("2_dres5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -28, 0, -4)
+length_units = 12.0
+merlon_count = 15
+
+[node name="CSGCastleWallSection4" parent="Blockout" unique_id=1806866967 instance=ExtResource("2_dres5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28, 0, -4)
+length_units = 12.0
+merlon_count = 15
+
+[node name="CSGTowerPiece" parent="Blockout" unique_id=934199931 instance=ExtResource("4_8jhyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 24)
+floor_01_south = 0
+floor_01_west = 0
+floor_02_north = 2
+floor_02_east = 2
+
+[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece" unique_id=839736863 instance=ExtResource("5_u1fkp")]
+
+[node name="CSGTowerPiece2" parent="Blockout" unique_id=1642597510 instance=ExtResource("4_8jhyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 24)
+floor_01_east = 0
+floor_01_south = 0
+floor_02_north = 2
+floor_02_west = 2
+
+[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece2" unique_id=614949286 instance=ExtResource("5_u1fkp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CSGTowerPiece3" parent="Blockout" unique_id=1555806648 instance=ExtResource("4_8jhyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -32)
+floor_01_north = 0
+floor_01_west = 0
+floor_02_east = 2
+floor_02_south = 2
+
+[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece3" unique_id=44331004 instance=ExtResource("5_u1fkp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CSGTowerPiece4" parent="Blockout" unique_id=983191629 instance=ExtResource("4_8jhyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -32)
+floor_01_north = 0
+floor_01_east = 0
+floor_02_south = 2
+floor_02_west = 2
+
+[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece4" unique_id=850667707 instance=ExtResource("5_u1fkp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CSGGatehouseSection2" parent="Blockout" unique_id=682599501 instance=ExtResource("1_8duyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="CSGWallPiece" parent="Blockout" unique_id=520957344 instance=ExtResource("6_2c8vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+wall_length_units = 15
+wall_height_units = 6
+
+[node name="CSGCastleWallSection5" parent="Blockout" unique_id=2029323702 instance=ExtResource("2_dres5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -34)
+merlon_count = 5
+
+[node name="CSGCastleWallSection6" parent="Blockout" unique_id=902575371 instance=ExtResource("2_dres5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -34)
+merlon_count = 5
+
+[node name="CSGDrawbridgePiece" parent="Blockout" unique_id=665789054 instance=ExtResource("7_bqnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
+bridge_length_units = 2
+bridge_thickness_units = 0.05
+top_surface_at_zero = false
+
+[node name="Player" parent="." unique_id=1662654945 instance=ExtResource("8_dres5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 33)
+
+[node name="Lights" type="Node3D" parent="." unique_id=1139645335]
+
+[node name="Sun_DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=121777309]
+transform = Transform3D(0.8660254, -0.35355344, 0.35355338, 0, 0.70710677, 0.7071069, -0.5, -0.6123725, 0.6123724, 48.5, 35.5, 41)
+shadow_enabled = true
+
+[node name="Fill_OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=717803899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+light_energy = 0.5
+omni_range = 35.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1311390680]
+environment = SubResource("Environment_dres5")

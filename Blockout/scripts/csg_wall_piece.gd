@@ -49,5 +49,7 @@ func update_piece() -> void:
 		wall.position.y = wall_height / 2.0
 	else:
 		wall.position.y = 0.0
+	pass
+	
 
 #endregion

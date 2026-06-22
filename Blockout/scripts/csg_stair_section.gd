@@ -34,6 +34,11 @@ extends CSGPieceBase
 		stair_width_units = safe_float(value, 0.25)
 		if auto_update:
 			update_piece()
+			
+@export var max_step_height_units: float = 0.0625:
+	set(value):
+		max_step_height_units = max(value, 0.01)
+		update_piece()
 
 #endregion
 
@@ -48,9 +53,13 @@ func update_piece() -> void:
 	for child in steps.get_children():
 		child.free()
 
-	var total_steps := height_sections * steps_per_section
-	var step_height := unit(rise_units_per_section) / float(steps_per_section)
-	var step_depth := unit(run_units_per_section) / float(steps_per_section)
+	var steps_per_section_actual := int(ceil(rise_units_per_section / max_step_height_units))
+	steps_per_section_actual = max(steps_per_section_actual, 1)
+
+	var total_steps := height_sections * steps_per_section_actual
+
+	var step_height := unit(rise_units_per_section) / float(steps_per_section_actual)
+	var step_depth := unit(run_units_per_section) / float(steps_per_section_actual)
 	var stair_width := unit(stair_width_units)
 
 	for i in total_steps:
@@ -60,14 +69,15 @@ func update_piece() -> void:
 		var current_height := step_height * float(i + 1)
 
 		step.size = Vector3(stair_width, current_height, step_depth)
-
 		step.position = Vector3(
 			0.0,
 			current_height / 2.0,
 			float(i) * step_depth + step_depth / 2.0
 		)
 
+		_setup_csg_collision(step)
+
 		steps.add_child(step)
-		step.owner = get_tree().edited_scene_root
+		_set_owner_safe(step)
 
 #endregion

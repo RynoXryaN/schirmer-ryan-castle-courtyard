@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://hxlha88k5v80" path="res://Blockout/scripts/csg_floor_piece.gd" id="1_tvj5u"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7y4s"]
+size = Vector3(66, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxv04"]
+size = Vector3(66, 8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucrqe"]
+size = Vector3(1, 8, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsw5x"]
+size = Vector3(1, 8, 80)
+
 [node name="CSGFloorPiece" type="Node3D" unique_id=577930890]
 script = ExtResource("1_tvj5u")
 floor_width_units = 16
@@ -9,4 +21,31 @@ floor_thickness_units = 0.25
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=859465825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
 size = Vector3(64, 1, 80)
+
+[node name="InvisiblePerimeterCollision" type="Node3D" parent="." unique_id=1384931056]
+
+[node name="NorthBarrier" type="StaticBody3D" parent="InvisiblePerimeterCollision" unique_id=428590097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -40.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisiblePerimeterCollision/NorthBarrier" unique_id=218785902]
+shape = SubResource("BoxShape3D_x7y4s")
+
+[node name="SouthBarrier" type="StaticBody3D" parent="InvisiblePerimeterCollision" unique_id=59251582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 40.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisiblePerimeterCollision/SouthBarrier" unique_id=1938796731]
+shape = SubResource("BoxShape3D_sxv04")
+
+[node name="EastBarrier" type="StaticBody3D" parent="InvisiblePerimeterCollision" unique_id=206238140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisiblePerimeterCollision/EastBarrier" unique_id=1317950040]
+shape = SubResource("BoxShape3D_ucrqe")
+
+[node name="WestBarrier" type="StaticBody3D" parent="InvisiblePerimeterCollision" unique_id=163275334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisiblePerimeterCollision/WestBarrier" unique_id=1844164955]
+shape = SubResource("BoxShape3D_gsw5x")
