@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://k3mloaboik4y"]
+
+[ext_resource type="PackedScene" uid="uid://qgue0ktjmwuh" path="res://Assets/dungeon_assets/building/pillar.glb" id="1_cvsag"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5tmix"]
+size = Vector3(1.1, 2.7, 0.56)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uscdp"]
+size = Vector3(1.1, 2.7, 0.56)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubqxw"]
+size = Vector3(1.18, 2.7, 0.38)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fxmw1"]
+size = Vector3(1.16, 2.7, 0.38)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h2m3h"]
+radius = 0.79999995
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s0mu8"]
+radius = 0.79999995
+
+[node name="Pillar" type="StaticBody3D" unique_id=1192844566]
+
+[node name="pillar2" parent="." unique_id=1459904067 instance=ExtResource("1_cvsag")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2015241270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 1.8500003, 1.1175871e-08)
+shape = SubResource("BoxShape3D_5tmix")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=388120391]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.9604645e-08, 1.8500003, 1.1175871e-08)
+shape = SubResource("BoxShape3D_uscdp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2106516414]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 5.8673322e-08, 1.8500003, 9.313226e-09)
+shape = SubResource("BoxShape3D_ubqxw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=498597377]
+transform = Transform3D(-0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, -0.70710665, 0.02121324, 1.8500003, 0.0070710676)
+shape = SubResource("BoxShape3D_fxmw1")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1917694171]
+shape = SubResource("SphereShape3D_h2m3h")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1309132122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7199998, 0)
+shape = SubResource("SphereShape3D_s0mu8")

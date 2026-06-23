@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d85ctsniylfr"]
+
+[ext_resource type="Script" uid="uid://t5fkh4wuifku" path="res://Building/Scripts/smart_gatehouse.gd" id="1_efu68"]
+[ext_resource type="PackedScene" uid="uid://dacrvya0r40ao" path="res://Building/Structures/SmartCastleWall.tscn" id="3_kctcj"]
+[ext_resource type="PackedScene" uid="uid://ie1uw7mfxm1y" path="res://Building/Components/Wall_doorway.tscn" id="4_kctcj"]
+[ext_resource type="PackedScene" uid="uid://clomefrghrxme" path="res://Building/Components/Wall_Archedwindow_gated.tscn" id="4_qh8jo"]
+
+[node name="SmartGatehouse" type="Node3D" unique_id=1650579229]
+script = ExtResource("1_efu68")
+wall_scene = ExtResource("3_kctcj")
+wall_window_scene = ExtResource("4_qh8jo")
+gate_doorway_scene = ExtResource("4_kctcj")
+generate_wall_walk = false
+wall_walk_thickness = 0.25
+generate_parapet = false
+generate_merlons = false

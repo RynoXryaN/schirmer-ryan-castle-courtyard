@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cota36w3adsdh" path="res://Blockout/Components/CSGWallPiece.tscn" id="6_2c8vx"]
 [ext_resource type="PackedScene" uid="uid://chpdusbt3x0pp" path="res://Blockout/Components/CSGDrawbridgePiece.tscn" id="7_bqnmf"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Player/Player.tscn" id="8_dres5"]
+[ext_resource type="Script" uid="uid://bkdnvutf5q1v8" path="res://Building/Scripts/asset_construction_machine.gd" id="9_yyisn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dres5"]
 size = Vector3(66, 8, 1)
@@ -157,3 +158,6 @@ omni_range = 35.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1311390680]
 environment = SubResource("Environment_dres5")
+
+[node name="ConstructionMachine" type="Node3D" parent="." unique_id=40485578]
+script = ExtResource("9_yyisn")

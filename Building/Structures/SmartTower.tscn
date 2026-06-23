@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b8jmr5otbnodv"]
+
+[ext_resource type="Script" uid="uid://bcqbx5qs1av0w" path="res://Building/Scripts/smart_tower.gd" id="1_guw43"]
+[ext_resource type="PackedScene" uid="uid://dy2c71mwdhavy" path="res://Building/Components/Wall.tscn" id="2_ofa4t"]
+[ext_resource type="PackedScene" uid="uid://ie1uw7mfxm1y" path="res://Building/Components/Wall_doorway.tscn" id="3_h5byq"]
+[ext_resource type="PackedScene" uid="uid://clomefrghrxme" path="res://Building/Components/Wall_Archedwindow_gated.tscn" id="4_hj7d8"]
+[ext_resource type="PackedScene" uid="uid://8mdeflr53oq7" path="res://Building/Components/Wall_corner.tscn" id="5_34ip0"]
+[ext_resource type="PackedScene" uid="uid://cve3eg4dy7mnf" path="res://Building/Components/Floor_stone.tscn" id="6_jcwlf"]
+[ext_resource type="PackedScene" uid="uid://b22l5vw4uqb10" path="res://Building/Components/Ceiling.tscn" id="7_jrbw6"]
+[ext_resource type="Script" uid="uid://pd4wsyforayx" path="res://Building/Scripts/tower_floor_openings.gd" id="8_reoke"]
+
+[sub_resource type="Resource" id="Resource_k1ubl"]
+resource_local_to_scene = true
+script = ExtResource("8_reoke")
+north = 2
+south = 1
+east = 2
+west = 1
+
+[sub_resource type="Resource" id="Resource_jg835"]
+resource_local_to_scene = true
+script = ExtResource("8_reoke")
+north = 1
+south = 1
+east = 1
+west = 1
+
+[node name="SmartTower" type="Node3D" unique_id=934199931]
+script = ExtResource("1_guw43")
+wall_scene = ExtResource("2_ofa4t")
+wall_door_scene = ExtResource("3_h5byq")
+wall_window_scene = ExtResource("4_hj7d8")
+corner_scene = ExtResource("5_34ip0")
+roof_scene = ExtResource("6_jcwlf")
+ceiling_scene = ExtResource("7_jrbw6")
+floor_scene = ExtResource("6_jcwlf")
+tower_width_units = 2.0
+tower_depth_units = 2.0
+floor_height_units = 1.0
+floor_openings = Array[ExtResource("8_reoke")]([SubResource("Resource_k1ubl"), SubResource("Resource_jg835")])
+stair_width_units = 0.35
+stair_step_height_units = 0.05
+stair_step_depth_units = 0.12
+parapet_height_units = 0.25
+parapet_thickness_units = 0.22
+parapet_overhang_units = 0.2
+merlon_width_units = 0.3
+merlon_depth_units = 0.2
+
+[node name="Generated2" type="Node3D" parent="." unique_id=2100597298]
