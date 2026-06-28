@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://c1xr78h1gtn48"]
 
 [ext_resource type="PackedScene" uid="uid://bav8vogluj5o5" path="res://Blockout/Structures/CSGGatehouseSection.tscn" id="1_8duyk"]
-[ext_resource type="PackedScene" uid="uid://fbne8a22re1n" path="res://Blockout/Structures/CSGCastleWallSection.tscn" id="2_dres5"]
 [ext_resource type="PackedScene" uid="uid://cyuxq0nm8ltn6" path="res://Blockout/Components/CSGFloorPiece.tscn" id="3_yyisn"]
-[ext_resource type="PackedScene" uid="uid://5gy7k856h1bq" path="res://Blockout/Components/CSGTowerPiece.tscn" id="4_8jhyc"]
-[ext_resource type="PackedScene" uid="uid://ce64sa2aigmy1" path="res://Blockout/Structures/CSGTowerInteriorPiece.tscn" id="5_u1fkp"]
 [ext_resource type="PackedScene" uid="uid://cota36w3adsdh" path="res://Blockout/Components/CSGWallPiece.tscn" id="6_2c8vx"]
 [ext_resource type="PackedScene" uid="uid://chpdusbt3x0pp" path="res://Blockout/Components/CSGDrawbridgePiece.tscn" id="7_bqnmf"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Player/Player.tscn" id="8_dres5"]
 [ext_resource type="Script" uid="uid://bkdnvutf5q1v8" path="res://Building/Scripts/asset_construction_machine.gd" id="9_yyisn"]
+[ext_resource type="PackedScene" uid="uid://b8jmr5otbnodv" path="res://Building/Structures/SmartTower.tscn" id="10_bqnmf"]
+[ext_resource type="PackedScene" uid="uid://dacrvya0r40ao" path="res://Building/Structures/SmartCastleWall.tscn" id="10_u1fkp"]
+[ext_resource type="Script" uid="uid://bi55v5hkloo45" path="res://Building/Scripts/castle_wall_segment_option.gd" id="11_2c8vx"]
+[ext_resource type="Script" uid="uid://pd4wsyforayx" path="res://Building/Scripts/tower_floor_openings.gd" id="11_morat"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dres5"]
 size = Vector3(66, 8, 1)
@@ -26,6 +27,150 @@ size = Vector3(1, 8, 80)
 background_color = Color(0.18549618, 0.41620854, 1, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.81912196, 0.8863491, 1, 1)
+
+[sub_resource type="Resource" id="Resource_8jhyc"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 2
+south = 1
+east = 2
+west = 1
+
+[sub_resource type="Resource" id="Resource_u1fkp"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 1
+south = 1
+east = 1
+west = 1
+
+[sub_resource type="Resource" id="Resource_2c8vx"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 2
+south = 1
+east = 2
+west = 1
+
+[sub_resource type="Resource" id="Resource_bqnmf"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 1
+south = 1
+east = 1
+west = 1
+
+[sub_resource type="Resource" id="Resource_morat"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 2
+south = 1
+east = 2
+west = 1
+
+[sub_resource type="Resource" id="Resource_ccvlq"]
+resource_local_to_scene = true
+script = ExtResource("11_morat")
+north = 1
+south = 1
+east = 1
+west = 1
+
+[sub_resource type="Resource" id="Resource_a12q5"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_iodab"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_qyybi"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_y3li0"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_7qoqe"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_1k8yb"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_m4jx6"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_q8e0f"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_wm320"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_ki0qa"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_ky8kg"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_7tsd1"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_id01e"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_yx8le"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_642jy"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_s24d4"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_gahkd"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_ys5eg"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_myddb"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_dpjv7"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_mygaa"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_fywur"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_oj77h"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
+
+[sub_resource type="Resource" id="Resource_u12j0"]
+resource_local_to_scene = true
+script = ExtResource("11_2c8vx")
 
 [node name="Courtyard" type="Node3D" unique_id=915611972]
 
@@ -63,63 +208,6 @@ shape = SubResource("BoxShape3D_u1fkp")
 [node name="CSGGatehouseSection" parent="Blockout" unique_id=1650579229 instance=ExtResource("1_8duyk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
 
-[node name="CSGCastleWallSection" parent="Blockout" unique_id=78147870 instance=ExtResource("2_dres5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 26)
-merlon_count = 5
-
-[node name="CSGCastleWallSection2" parent="Blockout" unique_id=259393562 instance=ExtResource("2_dres5")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 0, 26)
-merlon_count = 5
-
-[node name="CSGCastleWallSection3" parent="Blockout" unique_id=1259099728 instance=ExtResource("2_dres5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -28, 0, -4)
-length_units = 12.0
-merlon_count = 15
-
-[node name="CSGCastleWallSection4" parent="Blockout" unique_id=1806866967 instance=ExtResource("2_dres5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28, 0, -4)
-length_units = 12.0
-merlon_count = 15
-
-[node name="CSGTowerPiece" parent="Blockout" unique_id=934199931 instance=ExtResource("4_8jhyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 24)
-floor_01_south = 0
-floor_01_west = 0
-floor_02_north = 2
-floor_02_east = 2
-
-[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece" unique_id=839736863 instance=ExtResource("5_u1fkp")]
-
-[node name="CSGTowerPiece2" parent="Blockout" unique_id=1642597510 instance=ExtResource("4_8jhyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 24)
-floor_01_east = 0
-floor_01_south = 0
-floor_02_north = 2
-floor_02_west = 2
-
-[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece2" unique_id=614949286 instance=ExtResource("5_u1fkp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="CSGTowerPiece3" parent="Blockout" unique_id=1555806648 instance=ExtResource("4_8jhyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -32)
-floor_01_north = 0
-floor_01_west = 0
-floor_02_east = 2
-floor_02_south = 2
-
-[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece3" unique_id=44331004 instance=ExtResource("5_u1fkp")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="CSGTowerPiece4" parent="Blockout" unique_id=983191629 instance=ExtResource("4_8jhyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -32)
-floor_01_north = 0
-floor_01_east = 0
-floor_02_south = 2
-floor_02_west = 2
-
-[node name="CsgTowerInteriorPiece" parent="Blockout/CSGTowerPiece4" unique_id=850667707 instance=ExtResource("5_u1fkp")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
-
 [node name="CSGGatehouseSection2" parent="Blockout" unique_id=682599501 instance=ExtResource("1_8duyk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
@@ -127,14 +215,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
 wall_length_units = 15
 wall_height_units = 6
-
-[node name="CSGCastleWallSection5" parent="Blockout" unique_id=2029323702 instance=ExtResource("2_dres5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -34)
-merlon_count = 5
-
-[node name="CSGCastleWallSection6" parent="Blockout" unique_id=902575371 instance=ExtResource("2_dres5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -34)
-merlon_count = 5
 
 [node name="CSGDrawbridgePiece" parent="Blockout" unique_id=665789054 instance=ExtResource("7_bqnmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
@@ -161,3 +241,64 @@ environment = SubResource("Environment_dres5")
 
 [node name="ConstructionMachine" type="Node3D" parent="." unique_id=40485578]
 script = ExtResource("9_yyisn")
+
+[node name="GeneratedBuild" type="Node3D" parent="ConstructionMachine" unique_id=37415590]
+
+[node name="Building" type="Node3D" parent="." unique_id=1784724357]
+
+[node name="Gatehouses" type="Node3D" parent="Building" unique_id=669159635]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 27)
+
+[node name="Towers" type="Node3D" parent="Building" unique_id=1406666913]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 27)
+
+[node name="SmartTower01" parent="Building/Towers" unique_id=899501567 instance=ExtResource("10_bqnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2.9999943)
+floor_openings = Array[ExtResource("11_morat")]([SubResource("Resource_8jhyc"), SubResource("Resource_u1fkp")])
+
+[node name="SmartTower02" parent="Building/Towers" unique_id=1137425650 instance=ExtResource("10_bqnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.999996, 0, 59)
+floor_openings = Array[ExtResource("11_morat")]([SubResource("Resource_2c8vx"), SubResource("Resource_bqnmf")])
+
+[node name="SmartTower03" parent="Building/Towers" unique_id=934199931 instance=ExtResource("10_bqnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.500004, 0, 58.999996)
+floor_openings = Array[ExtResource("11_morat")]([SubResource("Resource_2c8vx"), SubResource("Resource_bqnmf")])
+
+[node name="SmartTower04" parent="Building/Towers" unique_id=116721958 instance=ExtResource("10_bqnmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 2.9999847)
+floor_openings = Array[ExtResource("11_morat")]([SubResource("Resource_morat"), SubResource("Resource_ccvlq")])
+
+[node name="Walls" type="Node3D" parent="Building" unique_id=1218120453]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, 27)
+
+[node name="SmartCastleWall01" parent="Building/Walls" unique_id=1823850235 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+wall_length_segments = 4
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_a12q5"), SubResource("Resource_iodab"), SubResource("Resource_qyybi"), SubResource("Resource_y3li0")])
+
+[node name="SmartCastleWall02" parent="Building/Walls" unique_id=431048578 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.500002, 0, 30.999992)
+wall_length_segments = 12
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_7qoqe"), SubResource("Resource_1k8yb"), SubResource("Resource_m4jx6"), SubResource("Resource_q8e0f"), SubResource("Resource_wm320"), SubResource("Resource_ki0qa"), SubResource("Resource_ky8kg"), SubResource("Resource_7tsd1"), SubResource("Resource_id01e"), SubResource("Resource_yx8le"), SubResource("Resource_642jy"), SubResource("Resource_s24d4")])
+merlon_count = 28
+
+[node name="SmartCastleWall03" parent="Building/Walls" unique_id=423252273 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.8146973e-06, 0, 61)
+wall_length_segments = 4
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_gahkd"), SubResource("Resource_ys5eg"), SubResource("Resource_myddb"), SubResource("Resource_dpjv7")])
+
+[node name="SmartCastleWall04" parent="Building/Walls" unique_id=232835823 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -28.500004, 0, 59.999992)
+wall_length_segments = 4
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_mygaa"), SubResource("Resource_fywur"), SubResource("Resource_oj77h"), SubResource("Resource_u12j0")])
+
+[node name="SmartCastleWall05" parent="Building/Walls" unique_id=78147870 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0.9999943)
+wall_length_segments = 4
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_a12q5"), SubResource("Resource_iodab"), SubResource("Resource_qyybi"), SubResource("Resource_y3li0")])
+
+[node name="SmartCastleWall06" parent="Building/Walls" unique_id=1719444308 instance=ExtResource("10_u1fkp")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -42.5, 0, 30.999989)
+wall_length_segments = 12
+segments = Array[ExtResource("11_2c8vx")]([SubResource("Resource_7qoqe"), SubResource("Resource_1k8yb"), SubResource("Resource_m4jx6"), SubResource("Resource_q8e0f"), SubResource("Resource_wm320"), SubResource("Resource_ki0qa"), SubResource("Resource_ky8kg"), SubResource("Resource_7tsd1"), SubResource("Resource_id01e"), SubResource("Resource_yx8le"), SubResource("Resource_642jy"), SubResource("Resource_s24d4")])
+merlon_count = 28
