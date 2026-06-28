@@ -377,7 +377,7 @@ func _build_top_cap() -> void:
 	# Auto-offset:
 	# Places the FRONT edge of the wall walk at z = 0,
 	# so it begins directly over the center of the wall.
-	var wall_walk_center_z := depth / 2.0
+	var wall_walk_center_z := depth / 2.0 + wall_piece_width_units / 2.0
 
 	var cap_size := Vector3(
 		length + overhang * 2.0,

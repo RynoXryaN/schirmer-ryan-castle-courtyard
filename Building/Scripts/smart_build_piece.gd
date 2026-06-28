@@ -17,6 +17,13 @@ class_name SmartBuildPiece
 		clear_now = false
 		if Engine.is_editor_hint():
 			clear_generated()
+			
+@export_group("Generated Visuals")
+@export var generated_color: Color = Color(0.55, 0.63, 0.68, 1.0):
+	set(value):
+		generated_color = value
+		if Engine.is_editor_hint():
+			rebuild()
 
 
 var generated_root: Node3D
@@ -32,20 +39,15 @@ func unit(value: float) -> float:
 
 
 func ensure_generated_root() -> Node3D:
-	if generated_root != null and is_instance_valid(generated_root):
-		return generated_root
+	var root := get_node_or_null("Generated") as Node3D
 
-	generated_root = get_node_or_null("Generated") as Node3D
+	if root == null:
+		root = Node3D.new()
+		root.name = "Generated"
+		add_child(root)
+		_set_owner_recursive(root, _get_owner_target())
 
-	if generated_root == null:
-		generated_root = Node3D.new()
-		generated_root.name = "Generated"
-		add_child(generated_root)
-
-		if Engine.is_editor_hint():
-			generated_root.owner = get_tree().edited_scene_root
-
-	return generated_root
+	return root
 
 
 func clear_generated() -> void:
@@ -101,10 +103,15 @@ func spawn_scene(
 
 
 func _set_owner_recursive(node: Node, owner_node: Node) -> void:
+	if node == null:
+		return
+
 	node.owner = owner_node
 
 	for child in node.get_children():
 		_set_owner_recursive(child, owner_node)
+		
+	pass
 		
 		
 func _create_static_box(
@@ -123,6 +130,8 @@ func _create_static_box(
 	box_mesh.size = size
 	mesh_instance.mesh = box_mesh
 
+	mesh_instance.material_override = _make_generated_material()
+
 	var collision := CollisionShape3D.new()
 	collision.name = "Collision"
 
@@ -133,13 +142,30 @@ func _create_static_box(
 	body.add_child(mesh_instance)
 	body.add_child(collision)
 
+	body.add_child(mesh_instance)
+	body.add_child(collision)
+
 	var root := ensure_generated_root()
 	root.add_child(body)
-
-	#if Engine.is_editor_hint():
-		#var scene_root := get_tree().edited_scene_root
-		#body.owner = scene_root
-		#mesh_instance.owner = scene_root
-		#collision.owner = scene_root
+	_set_owner_recursive(body, _get_owner_target())
 
 	return body
+	
+	
+func _make_generated_material() -> StandardMaterial3D:
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = generated_color
+	mat.roughness = 1.0
+	return mat
+	
+	
+func _get_owner_target() -> Node:
+	if Engine.is_editor_hint() and is_inside_tree():
+		var scene_root := get_tree().edited_scene_root
+		if scene_root != null:
+			return scene_root
+
+	if owner != null:
+		return owner
+
+	return self

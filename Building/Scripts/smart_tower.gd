@@ -279,6 +279,7 @@ func rebuild() -> void:
 
 	#if generate_stairs:
 		#build_stairs()
+
 		
 		
 func _build_walls() -> void:
@@ -405,7 +406,7 @@ func _build_roof() -> void:
 
 	_create_static_box(
 		"Generated_Roof",
-		Vector3(0.0, roof_y - roof_thickness / 2.0, 0.0),
+		Vector3(0.0, roof_y + roof_thickness / 2.0, 0.0),
 		roof_size
 	)
 	pass
@@ -684,6 +685,7 @@ func _create_static_box( box_name: String, position: Vector3, size: Vector3 ) ->
 	var box_mesh := BoxMesh.new()
 	box_mesh.size = size
 	mesh_instance.mesh = box_mesh
+	mesh_instance.material_override = _make_generated_material()
 
 	var collision := CollisionShape3D.new()
 	collision.name = "Collision"
@@ -745,4 +747,22 @@ func _connect_floor_opening_signals() -> void:
 func _on_floor_openings_changed() -> void:
 	if Engine.is_editor_hint():
 		rebuild()
+	pass
+	
+	
+func _apply_generated_visuals(node: Node) -> void:
+	if node == null:
+		return
+
+	if node is MeshInstance3D:
+		var mesh_instance := node as MeshInstance3D
+
+		var mat := StandardMaterial3D.new()
+		mat.albedo_color = generated_color
+		mat.roughness = 1.0
+
+		mesh_instance.material_override = mat
+
+	for child in node.get_children():
+		_apply_generated_visuals(child)
 	pass

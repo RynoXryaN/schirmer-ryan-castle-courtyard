@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dslkg4agdtulo"
-path.s3tc="res://.godot/imported/dungeon_albedo.png-65d5048a34c03350072e44f7b7ef644c.s3tc.ctex"
+uid="uid://f0i8eblkrd1f"
+path.s3tc="res://.godot/imported/dungeon_albedo.png-ab10518f732436f6970acfc89b679f43.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/dungeon_assets/dungeon_albedo.png"
-dest_files=["res://.godot/imported/dungeon_albedo.png-65d5048a34c03350072e44f7b7ef644c.s3tc.ctex"]
+source_file="res://Assets/dungeon_albedo.png"
+dest_files=["res://.godot/imported/dungeon_albedo.png-ab10518f732436f6970acfc89b679f43.s3tc.ctex"]
 
 [params]
 
